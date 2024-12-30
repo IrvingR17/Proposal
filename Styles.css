@@ -1,0 +1,138 @@
+@font-face {
+    font-family: "Circular Std";
+    src: url("fonts/CircularStd-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular Std";
+    src: url("fonts/CircularStd-Black.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #ff4400, #1E90FF);
+    background-size: 300% 300%;
+    animation: gradient 3s ease infinite;
+    overflow-x: hidden;
+    font-family: "Circular Std", Arial, sans-serif;
+  }
+
+    .btn-danger {
+      position: absolute;
+    }
+
+    section {
+      position: relative; 
+      overflow: hidden;
+    }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    animation: float 7s linear infinite;
+    z-index: -1;
+  }
+
+  .heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 10px;
+    top: 0;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) scale(0.6);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translateY(-50vh) scale(1);
+      opacity: .5;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.8);
+      opacity: 0;
+    }
+  }
+
+  #animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Línea divisoria estilizada */
+.divider {
+    width: 80%; /* Ancho de la línea */
+    height: 2px; /* Grosor de la línea */
+    margin: 50px auto; /* Separación de la línea respecto a otros elementos */
+    background: linear-gradient(to right, #FF7F50, #1E90FF);
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF7F50; /* Color de los círculos decorativos */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .divider::before {
+    left: -15px;
+  }
+  
+  .divider::after {
+    right: -15px;
+  }
+
+  .divider {
+    animation: gradientShift 5s infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background: linear-gradient(to right, #FF7F50, #1E90FF); }
+    50% { background: linear-gradient(to right, #1E90FF, #FF7F50); }
+    100% { background: linear-gradient(to right, #FF7F50, #1E90FF); }
+  }
+  
+  
