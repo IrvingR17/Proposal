@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idalhy <3</title>
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idalhy <3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="Styles.css" rel="stylesheet" />
 </head>
 <body class="p-4 fs-1 text-center">
-    <section class="welcome d-flex align-items-center justify-content-center vh-100">
+    <section class="welcome d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-1">
             <h2>Hola Idalhy</h2>
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-2">
             <p>
                 ¿Sabias que te amo mucho? Creo que eso ya lo sabes porque siempre te lo demuestro
@@ -23,7 +22,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-3">
             <p>
                 Pero eso no es lo que exactamente quiero decirte ahora
@@ -31,7 +30,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-4">
             <p>
                 Sabes, este ultimo par de meses que hemos estado saliendo me he sentido muy feliz contigo y cada dia que pasa siento que me enamoras cada vez mas
@@ -39,7 +38,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-5">
             <p>
                 Cada momento que pasamos juntos lo disfruto mucho, tanto que siempre estoy pidiendo que nunca se acabe para siempre estar todo el rato contigo
@@ -47,7 +46,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-6">
             <p>
                 Aunque al principio no estaba seguro de lo que sentias por mi, me fuiste demostrando que estaba equivocado y en poco tiempo me di cuenta que eras la indicada
@@ -55,7 +54,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-7">
             <p>
                 Quiero agradecerte por todo lo que has hecho por mi, por todo el cariño y por todo lo vivido hasta ahora
@@ -63,7 +62,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="d-flex align-items-center justify-content-center vh-100">
+    <section class="d-flex align-items-center justify-content-center vh-100 fade-in">
         <div class="param-8">
             <p>
                 Entonces, por todo lo anterior y por todo el amor que te tengo quisiera pedirte algo...
@@ -71,7 +70,7 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section id="question" class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <section id="question" class="d-flex flex-column align-items-center justify-content-center vh-100 fade-in">
         <div class="param-9">
             <p>
                 ¿Quieres ser mi novia?
@@ -85,68 +84,5 @@
 
     <div id="animation-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const container = document.getElementById('animation-container');
-    
-        function createHeart(x, y) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-    
-        heart.style.left = `${x}px`;
-        heart.style.top = `${y}px`;
-    
-        const size = 20;
-        heart.style.width = `${size}px`;
-        heart.style.height = `${size}px`;
-    
-        heart.style.animationDuration = `${Math.random() * 3 + 5}s`;
-    
-        container.appendChild(heart);
-    
-        heart.addEventListener('animationend', () => {
-            heart.remove();
-        });
-        }
-    
-        document.addEventListener('click', (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        createHeart(x, y);
-        });
-    
-        setInterval(() => {
-          const x = Math.random() * window.innerWidth;
-          const y = window.innerHeight;
-          createHeart(x, y);
-        }, 2000);
-    
-        document.addEventListener('click', (e) => {
-          const x = e.clientX;
-          const y = e.clientY;
-          createHeart(x, y);
-        });
-
-        document.getElementById('btn-yes').addEventListener('click', () => {
-        window.location.href = 'https://www.ejemplo.com';
-        });
-
-        const btnNo = document.getElementById('btn-no');
-        const section = btnNo.closest('section'); 
-        const bodyPadding = parseInt(window.getComputedStyle(document.body).paddingLeft, 10); 
-
-        btnNo.addEventListener('click', () => {
-        const sectionWidth = section.offsetWidth - 2 * bodyPadding; 
-        const sectionHeight = section.offsetHeight - 2 * bodyPadding; 
-
-        const btnWidth = btnNo.offsetWidth;
-        const btnHeight = btnNo.offsetHeight;
-
-        const newX = Math.random() * (sectionWidth - btnWidth) + bodyPadding;
-        const newY = Math.random() * (sectionHeight - btnHeight) + bodyPadding; 
-
-        btnNo.style.left = `${newX}px`;
-        btnNo.style.top = `${newY}px`;
-        });
-    </script>
-</body>
+    <script src="Script.js"></script>
 </html>
