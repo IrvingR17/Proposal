@@ -97,3 +97,7 @@ btnYes.addEventListener("click", () => {
 
     spark.addEventListener("animationend", () => spark.remove());
 });
+
+document.getElementById('btn-yes').addEventListener('click', function () {
+    this.classList.add('btn-glow'); 
+});
