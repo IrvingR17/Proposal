@@ -19,6 +19,7 @@ body {
     animation: gradient 3s ease infinite;
     overflow-x: hidden;
     font-family: "Circular Std", Arial, sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
     .btn-danger {
@@ -94,12 +95,50 @@ body {
     pointer-events: none;
     z-index: -1;
   }
+  
+  /* Contenedor del icono */
+.scroll-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  /* Línea divisoria estilizada */
+/* Flecha hacia abajo */
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    transform: rotate(-45deg);
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(5px) rotate(-45deg);
+    }
+}
+
+
 .divider {
-    width: 80%; /* Ancho de la línea */
-    height: 2px; /* Grosor de la línea */
-    margin: 50px auto; /* Separación de la línea respecto a otros elementos */
+    width: 90%; 
+    height: 2px; 
+    margin: 50px auto; 
     background: linear-gradient(to right, #FF7F50, #1E90FF);
     border-radius: 10px;
     position: relative;
@@ -112,7 +151,7 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #FF7F50; /* Color de los círculos decorativos */
+    background-color: #FF7F50;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -144,15 +183,13 @@ body {
   opacity: 1;
 }
 
-/* Corazón */
 .big-heart {
     position: absolute;
     color: red;
-    font-size: 3rem;
+    font-size: 6rem;
     animation: float 3s ease-out forwards;
 }
 
-/* Animación para hacer que el corazón flote hacia arriba y desaparezca */
 @keyframes float {
     0% {
         transform: scale(0.5) translateY(0);
@@ -168,7 +205,6 @@ body {
     }
 }
 
-/* Efecto de destello */
 .spark {
     position: absolute;
     width: 20px;

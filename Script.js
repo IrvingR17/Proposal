@@ -20,23 +20,17 @@ heart.addEventListener('animationend', () => {
 });
 }
 
-document.addEventListener('click', (e) => {
-const x = e.clientX;
-const y = e.clientY;
-createHeart(x, y);
-});
-
 setInterval(() => {
   const x = Math.random() * window.innerWidth;
   const y = window.innerHeight;
   createHeart(x, y);
 }, 2000);
 
-document.addEventListener('click', (e) => {
-  const x = e.clientX;
-  const y = e.clientY;
-  createHeart(x, y);
-});
+// document.addEventListener('click', (e) => {
+//   const x = e.clientX;
+//   const y = e.clientY;
+//   createHeart(x, y);
+// });
 
 // document.getElementById('btn-yes').addEventListener('click', () => {
 // window.location.href = 'https://www.ejemplo.com';
@@ -81,33 +75,25 @@ const btnYes = document.getElementById("btn-yes");
 const effectContainer = document.getElementById("effect-container");
 
 btnYes.addEventListener("click", () => {
-    // Crear un corazón
     const heart = document.createElement("div");
     heart.classList.add("big-heart");
     heart.textContent = "❤️";
 
-    // Posición inicial del corazón (centro del botón)
     const rect = btnYes.getBoundingClientRect();
     heart.style.left = `${rect.left + rect.width / 2}px`;
     heart.style.top = `${rect.top}px`;
 
-    // Agregar el corazón al contenedor
     effectContainer.appendChild(heart);
 
-    // Eliminar el corazón después de la animación
     heart.addEventListener("animationend", () => heart.remove());
 
-    // Crear un destello
     const spark = document.createElement("div");
     spark.classList.add("spark");
 
-    // Posición inicial del destello
     spark.style.left = `${rect.left + rect.width / 2}px`;
     spark.style.top = `${rect.top + rect.height / 2}px`;
 
-    // Agregar el destello al contenedor
     effectContainer.appendChild(spark);
 
-    // Eliminar el destello después de la animación
     spark.addEventListener("animationend", () => spark.remove());
 });
