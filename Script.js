@@ -38,9 +38,9 @@ document.addEventListener('click', (e) => {
   createHeart(x, y);
 });
 
-document.getElementById('btn-yes').addEventListener('click', () => {
-window.location.href = 'https://www.ejemplo.com';
-});
+// document.getElementById('btn-yes').addEventListener('click', () => {
+// window.location.href = 'https://www.ejemplo.com';
+// });
 
 const btnNo = document.getElementById('btn-no');
 const section = btnNo.closest('section'); 
@@ -75,4 +75,39 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 sections.forEach(section => {
   observer.observe(section);
+});
+
+const btnYes = document.getElementById("btn-yes");
+const effectContainer = document.getElementById("effect-container");
+
+btnYes.addEventListener("click", () => {
+    // Crear un corazón
+    const heart = document.createElement("div");
+    heart.classList.add("big-heart");
+    heart.textContent = "❤️";
+
+    // Posición inicial del corazón (centro del botón)
+    const rect = btnYes.getBoundingClientRect();
+    heart.style.left = `${rect.left + rect.width / 2}px`;
+    heart.style.top = `${rect.top}px`;
+
+    // Agregar el corazón al contenedor
+    effectContainer.appendChild(heart);
+
+    // Eliminar el corazón después de la animación
+    heart.addEventListener("animationend", () => heart.remove());
+
+    // Crear un destello
+    const spark = document.createElement("div");
+    spark.classList.add("spark");
+
+    // Posición inicial del destello
+    spark.style.left = `${rect.left + rect.width / 2}px`;
+    spark.style.top = `${rect.top + rect.height / 2}px`;
+
+    // Agregar el destello al contenedor
+    effectContainer.appendChild(spark);
+
+    // Eliminar el destello después de la animación
+    spark.addEventListener("animationend", () => spark.remove());
 });
