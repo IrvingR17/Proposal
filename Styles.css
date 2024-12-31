@@ -20,73 +20,73 @@ body {
     overflow-x: hidden;
     font-family: "Circular Std", Arial, sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  }
+}
 
-    .btn-danger {
-      position: absolute;
-    }
+.btn-danger {
+    position: absolute;
+}
 
-    section {
-      position: relative; 
-      overflow: hidden;
-    }
+section {
+    position: relative; 
+    overflow: hidden;
+}
 
-  @keyframes gradient {
+@keyframes gradient {
     0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
     }
-  }
+}
 
-  .heart {
+.heart {
     position: absolute;
     width: 20px;
     height: 20px;
     background-color: red;
     animation: float 7s linear infinite;
     z-index: -1;
-  }
+}
 
-  .heart::before, .heart::after {
+.heart::before, .heart::after {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
     background-color: red;
     border-radius: 50%;
-  }
+}
 
-  .heart::before {
+.heart::before {
     top: -10px;
     left: 0;
-  }
+}
 
-  .heart::after {
+.heart::after {
     left: 10px;
     top: 0;
-  }
+}
 
-  @keyframes float {
+@keyframes float {
     0% {
-      transform: translateY(0) scale(0.6);
-      opacity: 0.4;
+    transform: translateY(0) scale(0.6);
+    opacity: 0.4;
     }
     50% {
-      transform: translateY(-50vh) scale(1);
-      opacity: .5;
+    transform: translateY(-50vh) scale(1);
+    opacity: .5;
     }
     100% {
-      transform: translateY(-100vh) scale(0.8);
-      opacity: 0;
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
     }
-  }
+}
 
-  #animation-container {
+#animation-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -94,17 +94,16 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-  }
+}
   
-  /* Contenedor del icono */
 .scroll-icon {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
-/* Flecha hacia abajo */
 .arrow {
     width: 20px;
     height: 20px;
@@ -114,7 +113,6 @@ body {
     animation: bounce 1.5s infinite ease-in-out;
 }
 
-/* Animación de flotación */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -124,7 +122,6 @@ body {
     }
 }
 
-/* Animación de rebote */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0) rotate(-45deg);
@@ -138,41 +135,40 @@ body {
 .divider {
     width: 90%; 
     height: 2px; 
-    margin: 50px auto; 
     background: linear-gradient(to right, #FF7F50, #1E90FF);
     border-radius: 10px;
     position: relative;
-  }
+}
   
-  .divider::before,
-  .divider::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #FF7F50;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .divider::before {
-    left: -15px;
-  }
-  
-  .divider::after {
-    right: -15px;
-  }
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FF7F50;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .divider {
-    animation: gradientShift 5s infinite;
-  }
-  
-  @keyframes gradientShift {
-    0% { background: linear-gradient(to right, #FF7F50, #1E90FF); }
-    50% { background: linear-gradient(to right, #1E90FF, #FF7F50); }
-    100% { background: linear-gradient(to right, #FF7F50, #1E90FF); }
-  }
+.divider::before {
+  left: -15px;
+}
+
+.divider::after {
+  right: -15px;
+}
+
+.divider {
+  animation: gradientShift 5s infinite;
+}
+
+@keyframes gradientShift {
+  0% { background: linear-gradient(to right, #FF7F50, #1E90FF); }
+  50% { background: linear-gradient(to right, #1E90FF, #FF7F50); }
+  100% { background: linear-gradient(to right, #FF7F50, #1E90FF); }
+}
   
 .fade-in {
   opacity: 0;
