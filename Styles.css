@@ -14,14 +14,34 @@
 
 body {
     margin: 0;
-    background: linear-gradient(45deg, #ff4400, #1E90FF);
-    background-size: 300% 300%;
-    animation: gradient 3s ease infinite;
+    background: linear-gradient(270deg, #063970, #e28743, #154c79, #eab676);
+    background-size: 800% 800%;
+    animation: gradient 40s ease infinite;
     overflow-x: hidden;
     font-family: "Circular Std", Arial, sans-serif;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+p, h2 {
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(-270deg, #124d6a, #0f4158, #0c3446, #0c3446);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    animation: move-bg 10s linear infinite;
+}
+
+@keyframes move-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 .btn-danger {
     position: absolute;
 }
@@ -33,13 +53,13 @@ section {
 
 @keyframes gradient {
     0% {
-    background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-    background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-    background-position: 0% 50%;
+        background-position: 0% 50%;
     }
 }
 
@@ -226,14 +246,12 @@ section {
     }
 }
 
-/* Efecto de brillo */
 .btn-glow {
     box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.8), 
                 0 0 30px 6px rgba(0, 123, 255, 0.6);
     animation: glow 1.5s infinite alternate;
 }
 
-/* Animación de brillo */
 @keyframes glow {
     0% {
         box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5), 
